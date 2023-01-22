@@ -1,21 +1,21 @@
+
+global racas
+racas = ["Humano","Elfo","Anão"]
+
 class Personagem:
-    racaId = None
+    
+    
 
     def __init__(this, name, vida, dano, raca):
         this.nome = name
         this.vida = vida
         this.dano = dano
         this.estado = "Vivo"
-        this.racaId = raca
-        this.setRaca(this.racaId)
+        this.setRaca(raca)
+
 
     def setRaca(this, raca):
-        if raca == 1:
-            this.raca = "Humano"
-        elif raca == 2:
-            this.raca = "Elfo"
-        elif raca == 3:
-            this.raca = "Anão"
+        this.raca = racas[raca-1]
 
 
 

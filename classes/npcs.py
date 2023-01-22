@@ -1,23 +1,23 @@
 from classes.PersonagemModulo import Personagem
+
+global racasNãoAgressivas
+global racasAgressivas
+racasAgressivas = ["Humano","Dragão","Orc","Animal Selvagem","Espirito Elemental","Demonio"]
+racasNãoAgressivas = ["Humano","Dragão","Anão","Elfo","Espirito Elemental","Fada"]
+    
+
 class Npc(Personagem):
-    # conduta = any
-    # racaId = None
     
     def __init__(this, name, vida, dano, inimigo, raca):
         
         this.nome = name
         this.vida = vida
         this.dano = dano
-        if inimigo == True:
-            this.conduta = "Agressiva"
-        elif inimigo == False:
-            this.conduta = "Passiva"
-        else:
-            this.conduta = "Neutra"
+        this.conduta = this.setConduta(inimigo)
         this.raca = this.setRaca(raca)
         this.estado = "Vivo"
         
-
+    
 
     def __str__(self):
 
@@ -26,33 +26,21 @@ class Npc(Personagem):
        
 
 
+    def setConduta(this,inimigo):
+        if inimigo == True:
+            return  "Agressiva"
+        elif inimigo == False:
+            return "Passiva"
+        else:
+            return "Neutra"
+        
+
+
     def setRaca(this, racaId):
         if this.conduta == "Agressiva":
-            if racaId == 1:
-               return "Humano"
-            elif racaId == 2:
-                return "Dragão"
-            elif racaId == 3:
-                return "Orc"
-            elif racaId == 4:
-                return "Animal Selvagem"
-            elif racaId == 5:
-                return "Espirito elemental"
-            elif racaId == 6:
-                return "Demonio"
+            return racasAgressivas[racaId-1]
         else:
-            if racaId == 1:
-                return "Humano"
-            elif racaId == 2:
-                return  "Elfo"
-            elif racaId == 3:
-                return "Anão"
-            elif racaId == 4:
-                return "Dragão"
-            elif racaId == 5:
-                return "Fada"
-            elif racaId == 6:
-                return "Espirito elemental"
+            return racasNãoAgressivas[racaId-1]
 
 
 
