@@ -1,7 +1,5 @@
 from classes.PersonagemModulo import Personagem
 
-global racasNãoAgressivas
-global racasAgressivas
 racasAgressivas = ["Humano","Dragão","Orc","Animal Selvagem","Espirito Elemental","Demonio"]
 racasNãoAgressivas = ["Humano","Dragão","Anão","Elfo","Espirito Elemental","Fada"]
     

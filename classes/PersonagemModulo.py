@@ -1,5 +1,5 @@
 
-global racas
+
 racas = ["Humano","Elfo","Anão"]
 
 class Personagem:
